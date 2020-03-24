@@ -14,32 +14,23 @@ const propTypes = {
 // The component receives "elements" from Props
 const App = ({ elements, message, updateMessage }) => (
   <div>
-    <Message
-      message={message}
-      handleUpdateMessage={updateMessage}
-    />
-    <Elements
-      elements={elements}
-    />
+    <Message message={message} handleUpdateMessage={updateMessage} />
+    <Elements elements={elements} />
   </div>
 );
 
 // State -> Props
-const mapStateToProps = state => (
-  {
-    elements: state.elements,
-    message: state.message,
-  }
-);
+const mapStateToProps = (state) => ({
+  elements: state.elements,
+  message: state.message,
+});
 
 // Functions -> Props
-const mapDispatchToProps = dispatch => (
-  {
-    updateMessage() {
-      dispatch(actionMessage());
-    },
-  }
-);
+const mapDispatchToProps = (dispatch) => ({
+  updateMessage() {
+    dispatch(actionMessage());
+  },
+});
 
 App.propTypes = propTypes;
 export default connect(mapStateToProps, mapDispatchToProps)(App);

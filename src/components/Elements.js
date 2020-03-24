@@ -7,7 +7,7 @@ const propTypes = {
 
 const Elements = ({ elements }) => (
   <ul>
-    {elements.map(element => (
+    {elements.map((element) => (
       <li key={element.id} className="element">
         {element.name}
       </li>
