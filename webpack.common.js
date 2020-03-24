@@ -20,6 +20,7 @@ module.exports = {
     port: 8080,
     inline: true,
     contentBase: './build',
+    historyApiFallback: true,
   },
 
   module: {
